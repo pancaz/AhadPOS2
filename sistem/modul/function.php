@@ -901,7 +901,7 @@ function detailTransaksiBeli($idTransaksiBeli) {
 
 function detailBarangTransaksiBeli($idTransaksiBeli) {
    $query = mysql_query("SELECT detail_beli.idBarang, barang.barcode, namaBarang, detail_beli.jumBarang, hargaBeli, tglExpire FROM detail_beli, barang
-        WHERE barang.idBarang = detail_beli.idBarang and detail_beli.idTransaksiBeli = '$idTransaksiBeli'") or die(mysql_error());
+        WHERE barang.barcode = detail_beli.barcode and detail_beli.idTransaksiBeli = '$idTransaksiBeli'") or die(mysql_error());
    return $query;
 }
 
